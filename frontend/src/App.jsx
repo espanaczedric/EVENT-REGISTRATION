@@ -1,0 +1,146 @@
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom";
+
+// Public Pages
+import Home from "./pages/Home";
+import Events from "./pages/Events";
+import EventDetailsPage from "./pages/EventDetailsPage";
+
+// Registration
+import Register from "./pages/Register";
+import RegistrationConfirmation from "./pages/RegistrationConfirmation";
+import MyEvents from "./pages/MyEvents";
+
+// Authentication
+import Login from "./pages/login";
+import RegisterAccount from "./pages/RegisterAccount";
+
+// Admin Pages
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminEvents from "./pages/admin/AdminEvents";
+import CreateEvent from "./pages/admin/CreateEvent";
+import EditEvent from "./pages/admin/EditEvent";
+import Registrations from "./pages/admin/Registrations";
+import Attendance from "./pages/admin/Attendance";
+import QRScannerPage from "./pages/admin/QRScannerPage";
+import EventHighlightsManager from "./pages/admin/EventHighlightsManager";
+import Users from "./pages/admin/Users";
+
+function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+
+                {/* =========================
+                    PUBLIC PAGES
+                ========================= */}
+
+                <Route
+                    path="/"
+                    element={<Home />}
+                />
+
+                <Route
+                    path="/events"
+                    element={<Events />}
+                />
+
+                <Route
+                    path="/events/:id"
+                    element={<EventDetailsPage />}
+                />
+
+
+                {/* =========================
+                    AUTHENTICATION
+                ========================= */}
+
+                <Route
+                    path="/login"
+                    element={<Login />}
+                />
+
+                <Route
+                    path="/register-account"
+                    element={<RegisterAccount />}
+                />
+
+
+                {/* =========================
+                    EVENT REGISTRATION
+                ========================= */}
+
+                <Route
+                    path="/register/:id"
+                    element={<Register />}
+                />
+
+                <Route
+                    path="/registration/:code"
+                    element={<RegistrationConfirmation />}
+                />
+
+                <Route
+                    path="/my-events"
+                    element={<MyEvents />}
+                />
+
+
+                {/* =========================
+                    ADMIN
+                ========================= */}
+
+                <Route
+                    path="/admin"
+                    element={<AdminDashboard />}
+                />
+
+                <Route
+                    path="/admin/events"
+                    element={<AdminEvents />}
+                />
+
+                <Route
+                    path="/admin/events/create"
+                    element={<CreateEvent />}
+                />
+
+                <Route
+                    path="/admin/events/:id/edit"
+                    element={<EditEvent />}
+                />
+
+                <Route
+                    path="/admin/registrations"
+                    element={<Registrations />}
+                />
+
+                <Route
+                    path="/admin/attendance"
+                    element={<Attendance />}
+                />
+
+                <Route
+                    path="/admin/attendance/scanner"
+                    element={<QRScannerPage />}
+                />
+
+                <Route
+                    path="/admin/highlights"
+                    element={<EventHighlightsManager />}
+                />
+
+                <Route
+                    path="/admin/users"
+                    element={<Users />}
+                />
+
+            </Routes>
+        </BrowserRouter>
+    );
+}
+
+export default App;
