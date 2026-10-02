@@ -1,5 +1,5 @@
 export const API_URL =
-    "http://localhost/university-events/backend/api";
+    "https://university-events-backend.onrender.com/api";
 
 const BACKEND_URL = API_URL.replace(/\/api\/?$/, "");
 

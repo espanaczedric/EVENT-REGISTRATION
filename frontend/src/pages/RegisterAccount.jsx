@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../services/api";
 import {
     Link,
     useNavigate
@@ -69,7 +70,7 @@ function RegisterAccount() {
         try {
 
             const response = await fetch(
-                "http://localhost/university-events/backend/api/auth/register.php",
+                `${API_URL}/auth/register.php`,
                 {
                     method: "POST",
 
