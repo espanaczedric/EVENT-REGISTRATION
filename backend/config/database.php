@@ -13,7 +13,7 @@ try {
         $username,
         $password,
         [
-            PDO::MYSQL_ATTR_SSL_CA => "/etc/ssl/cert.pem",
+            PDO::MYSQL_ATTR_SSL_CA => "/etc/ssl/certs/ca-certificates.crt",
             PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => true,
         ]
     );
